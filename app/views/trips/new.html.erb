@@ -1,20 +1,22 @@
-<h1></h1>
+<h1 class="text-center">Créer un nouveau trip</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :name,
-                required: false,
-                autofocus: true %>
-    <%= f.input :city,
-                required: false %>
+<div class="container">
 
-    <%= f.input :description,
-                required: false %>
-  </div>
+  <%= simple_form_for @trip do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name,
+                  required: false,
+                  autofocus: true %>
+      <%= f.input :city,
+                  required: false %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Submit the trip" %>
-  </div>
-<% end %>
+      <%= f.input :description,
+                  required: false %>
+    </div>
 
-<%= render "new" %>
+    <div class="form-actions">
+      <%= f.button :submit, "Submit the trip" %>
+    </div>
+  <% end %>
+</div>
+
