@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_134212) do
+ActiveRecord::Schema.define(version: 2019_08_19_133353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,6 @@ ActiveRecord::Schema.define(version: 2019_08_19_134212) do
     t.datetime "updated_at", null: false
     t.index ["trip_id"], name: "index_bookings_on_trip_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
-    t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|
