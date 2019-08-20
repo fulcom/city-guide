@@ -18,7 +18,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-      redirect_to trips_path(@trip)
+      redirect_to trips_path
     else
       render :new
     end
@@ -47,6 +47,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:name, :city, :description, :image)
+    params.require(:trip).permit(:name, :city, :description, :photo)
   end
 end
