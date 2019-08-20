@@ -1,20 +1,32 @@
-<h1><%= @trip.name %></h1>
-<%= link_to "Back to all trips", root_path %>
 
-<h2><%= @trip.description %></h2>
-<p>Trip description</p>
+<div class="container">
+  <div class="col-6 offset-6">
 
-<div class="row">
-  <div class="col-8">
-  <p>blabla</p>
+    <h1><%= @trip.name %></h1>
 
+    <h2><%= @booking.start_date %><%= @booking.end_date %></h2>
+    <h2><%= @trip.description %></h2>
+    <p><%= @trip.image %></p>
+    <p>Trip description</p>
+
+    <p>blabla</p>
+
+    <p>TimeTable</p>
+
+    <%= link_to "Back to all trips", root_path %>
   </div>
-
-  <div class="col-4">
-  <p>TimeTable</p>
+  <div class="col-6 offset-6">
+    <%= simple_form_for [@trip, @booking] do |f| %>
+      <div class="form-inputs">
+          <%= f.input :start_date,
+                  required: false,
+                  autofocus: true %>
+          <%= f.input :end_date,
+                  required: false %>
+      </div>
+      <div class="form-actions">
+          <%= f.button :submit, "Treep !", class: "btn btn-primary"  %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-</div>
-
-
-
