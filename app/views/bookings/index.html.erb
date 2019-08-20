@@ -12,10 +12,12 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.trip_name %><%= booking.trip_city %></td>
+        <td><%= booking.id %></td>
         <td><%= booking.start_date %> to <%= booking.end_date %></td>
-        <td><%= link_to 'Show', trip_booking_path(booking) %></td>
+        <td><%= link_to 'Show' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+

@@ -1,10 +1,15 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    @trip = Trip.find(params[:trip_id])
+    # raise
   end
 
   def show
-    @booking = Booking.find(params[:booking_id])
+    @booking = Booking.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
+    @user = User.find(@booking[:user_id])
+    raise
   end
 
   def new
