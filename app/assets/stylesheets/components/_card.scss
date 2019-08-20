@@ -1,4 +1,4 @@
-.trip-card {
+.card-trip {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -8,15 +8,15 @@
   box-sizing: border-box;
   margin: 15px;
 }
-.card-description {
+.card-trip-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
+.card-trip-description h2 {
   font-size: 24px;
 }
-.card-link {
+.card-trip-link {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -26,8 +26,40 @@
   background: white;
   opacity: 0;
 }
-.card-link:hover {
+.card-trip-link:hover {
   opacity: 0.1;
 }
 
 
+.card-text {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-text img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-text h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-text p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-text .card-text-infos {
+  padding: 16px;
+}
