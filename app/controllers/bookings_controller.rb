@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @trip = Trip.find(params[:trip_id])
     @user = User.find(@booking[:user_id])
-    raise
   end
 
   def new
@@ -23,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.trip = @trip
     @booking.user = current_user
     if @booking.save
-      redirect_to trip_path(@trip)
+      redirect_to trip_booking_path(@trip, @booking)
     else
       render "trips/show"
     end

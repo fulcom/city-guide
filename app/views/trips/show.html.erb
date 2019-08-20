@@ -15,19 +15,16 @@
     <%= link_to "Back to all trips", root_path %>
   </div>
   <div class="col-6 offset-6">
-    <%= simple_form_for @booking do |f| %>
+    <%= simple_form_for [@trip, @booking] do |f| %>
       <div class="form-inputs">
           <%= f.input :start_date,
                   required: false,
                   autofocus: true %>
           <%= f.input :end_date,
                   required: false %>
-          <%= f.input :city,
-                  required: false %>
       </div>
       <div class="form-actions">
-          <%= f.button :submit, "Submit the booking"  %>
-          <%= link_to 'Back', trip_booking_path %>
+          <%= f.button :submit, "Treep !", class: "btn btn-primary"  %>
         </div>
       <% end %>
     </div>
