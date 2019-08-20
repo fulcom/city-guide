@@ -1,4 +1,4 @@
-<div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.image %>')">
+<div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo %>')">
 </div>
 
 <!-- <#%= cl_image_tag @trip.user.image, class: "avatar-large avatar-banner"%> -->
@@ -11,7 +11,7 @@
 
     <h2><%= @booking.start_date %><%= @booking.end_date %></h2>
     <h2><%= @trip.description %></h2>
-    <p><%= @trip.image %></p>
+    <p><%= @trip.photo %></p>
     <p>Trip description</p>
 
     <p>blabla</p>
