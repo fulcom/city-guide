@@ -12,11 +12,9 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
+        <td><%= booking.trip_name %><%= booking.trip_city %></td>
         <td><%= booking.start_date %> to <%= booking.end_date %></td>
-<!--         <td><%= garden.banner_url %></td>
-        <td><%= link_to 'Show', garden %></td>
-        <td><%= link_to 'Edit', edit_garden_path(garden) %></td>
-        <td><%= link_to 'Destroy', garden, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td><%= link_to 'Show', trip_booking_path(booking) %></td>
       </tr>
     <% end %>
   </tbody>
