@@ -1,0 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @garden.banner_url %>');">
+  <div class="container">
+    <h1><%= @booking.tip_name %></h1>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="cards">
+    <% @trip.bookings.each do |booking| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= booking.image_url %>')">
+        <%= booking.trip_name %>
+        <%= booking.start_date %><%= booking.end_date %>
+        <%= link_to 'Edit', edit_trip_booking_path(booking) %>
+        <%= link_to 'Destroy', trip_bookings_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+  </div>
+</div>
