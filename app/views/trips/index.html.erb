@@ -1,0 +1,10 @@
+<div class="container">
+
+<h1>Liste des trips</h1>
+
+<% @trips.each do |trip| %>
+  <p>Name : <%= link_to trip.name, trip_path(trip) %></p>
+<% end %>
+
+<%= link_to "Create a new trip", new_trip_path %>
+</div>
