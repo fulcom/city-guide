@@ -3,7 +3,6 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
-
   end
 
   def show
@@ -48,6 +47,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:name, :city, :description)
+    params.require(:trip).permit(:name, :city, :description, :image)
   end
 end
