@@ -10,14 +10,16 @@
                   autofocus: true %>
       <%= f.input :city,
                   required: false %>
-
       <%= f.input :description,
                   required: false %>
+      <%= f.input :photo,
+                  required: false %>
+      <%= f.input :photo_cache, as: :hidden %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Submit the trip"%>
-      <%= link_to 'Back', trips_path %>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "Submit the trip", class: "btn btn-flat-violet"%>
+      <%= link_to 'Back', trips_path, class: "btn btn-flat-green" %>
     </div>
   <% end %>
 </div>
