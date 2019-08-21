@@ -3,3 +3,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.container-trip {
+  min-height: calc(100vh - 186px)
+}
+
+.container-home {
+  min-height: calc(100vh - 486px)
+}
