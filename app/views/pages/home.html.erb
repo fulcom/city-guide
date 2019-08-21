@@ -3,14 +3,18 @@
 <div class="container">
   <h2>Les derniers Treeps</h2>
   <div class="card-grid">
-    <div class="card-trip">
-
-    </div>
-    <div class="card-trip">
-
-    </div>
-    <div class="card-trip">
-
+    <div class="row">
+      <div class="card-trip">
+        <%= link_to "Ballade à Montmartre", trip_path(Trip.first)  %>
+        <h2><%= Trip.first.description %></h2>
+      </div>
+      <div class="card-trip">
+        <%= link_to "Découverte du canal", trip_path(Trip.last)  %>
+        <h2><%= Trip.last.description %></h2>
+      </div>
+      <div class="card-trip">
+        <%= Trip.first.name %>
+      </div>
     </div>
   </div>
 </div>
