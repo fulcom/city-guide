@@ -1,21 +1,28 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
+  <h1 class="d-flex banner-h1 mt-100 mb-100 justify-content-center">Une expérience green à Paris</h1>
+  <div class="d-flex justify-content-center" style="margin-top: 15px;">
+    <div class="border border-white mr-4 d-flex justify-content-center align-items-center" style="width: 450px">
+      <h2 class="banner-h2 " style="vertical-align: middle; " ">Searchbar to come</h2>
+    </div>
+    <button class="btn-flat-green">Rechercher</button>
+  </div>
 </div>
 <div class="container">
   <h2 class="m-3">Les derniers Treeps</h2>
   <div class="card-grid">
     <div class="row">
       <div class="card-trip col-4">
-        <h2><%= link_to "Ballade à Montmartre", trip_path(@last_trip1)  %></h2>
+        <h2><%= link_to @last_trip1.name, trip_path(@last_trip1)  %></h2>
         <%= cl_image_tag @last_trip1.photo %>
         <p><%= @last_trip1.description.first(151) %>[...]</p>
       </div>
       <div class="card-trip col-4">
-        <h2><%= link_to "Découverte du canal", trip_path(@last_trip2)  %></h2>
+        <h2><%= link_to @last_trip2.name, trip_path(@last_trip2)  %></h2>
         <%= cl_image_tag @last_trip2.photo %>
         <p><%= @last_trip2.description.first(151) %>[...]</p>
       </div>
       <div class="card-trip col-4">
-        <h2><%= link_to "Découverte du 20ème", trip_path(@last_trip3)  %></h2>
+        <h2><%= link_to @last_trip3.name, trip_path(@last_trip3)  %></h2>
         <%= cl_image_tag @last_trip3.photo %>
         <p><%= @last_trip3.description.first(151) %>[...]</p>
       </div>
