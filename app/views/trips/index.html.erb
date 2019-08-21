@@ -1,27 +1,30 @@
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
+    <h1 class="m-3">Que voulez-vous faire ?</h1>
+    <h2 id="h2-index" class="m-3">Découvrez votre ville</h2>
+  </div>
+
 <div class="container container-trip">
 
 
-<div class="banner-index-governesses" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container-banner">
-  </div>
-</div>
-<div class="d-flex">
-  <div class="container">
-    <div class="left-side d-flex justify-content-around">
-      <h1>Liste des trips</h1>
-      <% @trips.each do |trip| %>
-          <p>Name : <%= link_to trip.name, trip_path(trip) %></p>
-      <% end %>
-      <%= link_to "Create a new trip", new_trip_path %>
-    </div>
-    <div class="right-side">
-      <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_KEY'] %>">
-      </div>
+
+  <div class="d-flex pos-photo">
+    <div class="container col-6">
+       <h2 class="m-3">List des treeps</h2>
+        <div>
+            <% @trips.each do |trip| %>
+           <div class="card-text m-10">
+            <%= cl_image_tag trip.photo %>
+              <div class="card-text-infos">
+                <h2><%= link_to trip.name, trip_path(trip) %></h2>
+                <p><%= trip.description.first(200) %>[...]</p>
+              </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+      <div class="container col-6 resize-img mt-5" style="background-image: url(<%= image_path 'map.png' %>)">
+
     </div>
   </div>
 </div>
