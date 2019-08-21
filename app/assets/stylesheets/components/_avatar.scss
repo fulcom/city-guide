@@ -5,8 +5,9 @@
 .avatar-large {
   width: 100px;
   border-radius: 50%;
-  right: 10px;
-  bottom: -66px;
+  position: aboslute;
+  // right: 10px;
+  // bottom: -66px;
 }
 .avatar-bordered {
   width: 40px;
@@ -22,5 +23,11 @@
 }
 
 .avatar-banner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   position: absolute;
+  right: 50px;
+  bottom: 300px;
+  border: #24AFA0;
 }

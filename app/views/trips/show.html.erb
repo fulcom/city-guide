@@ -1,28 +1,25 @@
-<div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo %>')">
+
+<div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo, crop: :fill %>')">
 </div>
-
+​
 <!-- <#%= cl_image_tag @trip.user.image, class: "avatar-large avatar-banner"%> -->
-<img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-large avatar-banner">
-
-<div class="banner-content">
-  <div class="col-12 col-md-6 col-lg-3">
-
-    <h1><%= @trip.name %></h1>
-
-    <h2><%= @booking.start_date %><%= @booking.end_date %></h2>
-    <h2><%= @trip.description %></h2>
-    <p><%= @trip.photo %></p>
-    <p>Trip description</p>
-
-    <p>blabla</p>
-
-    <p>TimeTable</p>
-
-    <%= link_to "Back to all trips", root_path %>
+<img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner">
+​
+<div class="banner-content d-flex">
+  <div class="col-8">
+​
+    <h1 class="border align-middle text-center"><%= @trip.name %></h1>
+​
+    <h2 class="text-center"><%= @trip.description %></h2>
+​
+    <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la </p>
+​
+    <%= link_to "Back to all trips", root_path, class: "btn btn-flat-violet w-40" %>
   </div>
-  <div class="col-6 offset-6">
+  <div class="col-4">
+    <h1 id="book"> Réservez ce treep !</h1>
     <%= simple_form_for [@trip, @booking] do |f| %>
-      <div class="form-inputs">
+      <div class="form-inputs text-center">
           <%= f.input :start_date,
                   required: false,
                   autofocus: true %>
@@ -30,7 +27,7 @@
                   required: false %>
       </div>
       <div class="form-actions">
-          <%= f.button :submit, "Treep !", class: "btn btn-flat-green"  %>
+          <%= f.button :submit, "Treep !", class: "btn btn-flat-green w-100"  %>
         </div>
       <% end %>
     </div>
