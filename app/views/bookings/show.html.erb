@@ -20,8 +20,6 @@
     <p>Commence le <%= @booking.start_date.strftime("%A %d %B") %> et termine le <%= @booking.end_date.strftime("%A %d %B") %></p>
     <p><%= @trip.name %> à <%= @trip.city %></p>
     <p>Description : <%= @trip.description %></p>
-    <p><%= cl_image_tag (@trip.photo) %></p>
-    <p>link_to "Modifier ma réservation"</p>
-    <p>link_to "Annuler ma réservation"</p>
+    <p><%= link_to "Modifier", edit_trip_booking_path(@booking)%></p>
     </div>
   </div>
