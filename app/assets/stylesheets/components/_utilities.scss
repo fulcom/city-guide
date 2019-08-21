@@ -12,7 +12,15 @@
   min-height: calc(100vh - 486px)
 }
 
-#book {
-  padding-top: 50px;
+.h1-description {
+  padding-top: 15px;
+  padding-left: 15px;
+  align-items: flex-end;
   text-align: center;
+}
+
+.parag-description {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 40px;
 }
