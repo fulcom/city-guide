@@ -13,7 +13,7 @@
     <p class="text-justify"><%= @trip.description %></p>
 ​
 
-​    <%= link_to "Back to all trips", root_path, class: "btn btn-flat-violet w-40" %>
+​    <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
 
   </div>
   <div class="col-4">
@@ -27,7 +27,7 @@
                   required: false, input_html: {class: "datepicker"} %>
       </div>
       <div class="form-actions">
-          <%= f.button :submit, "Treep !", class: "btn btn-flat-green w-100"  %>
+          <%= f.button :submit, "Treep !", trip_booking_path(@booking), class: "btn btn-flat-green w-100"  %>
         </div>
       <% end %>
     </div>

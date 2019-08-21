@@ -1,10 +1,27 @@
-<h1><%= @user.first_name %>, voilà le détail de ta réservation</h1>
+<div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo, crop: :fill %>')">
+</div>
+​
+<!-- <#%= cl_image_tag @trip.user.image, class: "avatar-large avatar-banner"%> -->
+<img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner">
+​
+<div class="banner-content d-flex mr-3 ml-3">
+  <div class="col-8">
+​
+    <h1 class="text-center"><%= @trip.name %></h1>
+​
+    <p class="text-justify"><%= @trip.description %></p>
+​
 
-<p>Commence le <%= @booking.start_date.strftime("%A %d %B") %> et termine le <%= @booking.end_date.strftime("%A %d %B") %></p>
-<p><%= @trip.name %> à <%= @trip.city %></p>
-<p>Description : <%= @trip.description %></p>
-<p>url('<%= cl_image_tag (@trip.photo) %>')</p>
+​    <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
 
-<p>link_to "Modifier ma réservation", </p>
-<p>link_to "Annuler ma réservation"</p>
-
+  </div>
+  <div class="col-4">
+    <h1><%= @user.first_name %> Voilà le détail de la réservation</h1>
+    <p>Commence le <%= @booking.start_date.strftime("%A %d %B") %> et termine le <%= @booking.end_date.strftime("%A %d %B") %></p>
+    <p><%= @trip.name %> à <%= @trip.city %></p>
+    <p>Description : <%= @trip.description %></p>
+    <p><%= cl_image_tag (@trip.photo) %></p>
+    <p>link_to "Modifier ma réservation"</p>
+    <p>link_to "Annuler ma réservation"</p>
+    </div>
+  </div>
