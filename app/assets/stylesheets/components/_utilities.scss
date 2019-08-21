@@ -24,3 +24,31 @@
   padding-right: 15px;
   margin-bottom: 40px;
 }
+
+#book {
+  padding-top: 50px;
+  text-align: center;
+}
+
+#h2-index {
+  color: white;
+}
+
+#map {
+
+
+}
+
+.resize-img {
+  overflow: hidden;
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  // position: fixed;
+  // right: 3%;
+  // top: 10%;
+}
+
+.pos-photo {
+  position: relative;
+}
