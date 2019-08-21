@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
-    @trip = Trip.find(params[:trip_id])
-    @user = current_user
+    # @bookings = Booking.all
+    # @trip = Trip.find(params[:trip_id])
+    # @user = current_user
     # raise
   end
 
