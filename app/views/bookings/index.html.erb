@@ -1,9 +1,16 @@
-<h1>Here are all your bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <p>Commence le <%= @ooking.start_date.strftime("%A %d %B") %> et termine le <%= booking.end_date.strftime("%A %d %B") %></p>
-  <p><%= booking.trip.name %></p>
-  <p></p>
-<% end %>
-
+<div class="container">
+ <h1>Here are all your bookings</h1>
+  <div class="card-grid">
+    <% current_user.bookings.each do |booking| %>
+    <div class="card-text">
+      <%= cl_image_tag booking.trip.photo, alt: "Image trip", width: 200 %>
+      <div>
+        <h2><%= link_to booking.trip.name, trip_path(booking) %></h2>
+        <p>Commence le <%= booking.start_date.strftime("%A %d %B") %> et termine le <%= booking.end_date.strftime("%A %d %B") %></p>
+        <p><%= booking.trip.city %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
