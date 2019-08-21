@@ -3,23 +3,13 @@
 ​
 <!-- <#%= cl_image_tag @trip.user.image, class: "avatar-large avatar-banner"%> -->
 <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner">
-​
-<div class="banner-content d-flex mr-3 ml-3">
-  <div class="col-8">
-​
-    <h1 class="text-center"><%= @trip.name %></h1>
-​
-    <p class="text-justify"><%= @trip.description %></p>
-​
+​<div class="container">
+  <div class="banner-content text-center m-10">
 
-​    <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
-
-  </div>
-  <div class="col-4">
-    <h1><%= @user.first_name %> Voilà le détail de la réservation</h1>
+    <h1 ><%= @user.first_name %>, voici le détail de la réservation</h1>
     <p>Commence le <%= @booking.start_date.strftime("%A %d %B") %> et termine le <%= @booking.end_date.strftime("%A %d %B") %></p>
     <p><%= @trip.name %> à <%= @trip.city %></p>
     <p>Description : <%= @trip.description %></p>
-    <p><%= link_to "Modifier", edit_trip_booking_path(@booking)%></p>
-    </div>
+    <p><%= link_to "Modifier votre réservation", edit_trip_booking_path(@booking), class: "btn btn-flat-violet w-50"%></p>
   </div>
+</div>
