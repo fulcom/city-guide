@@ -5,19 +5,19 @@
   <div class="card-grid">
     <div class="row">
       <div class="card-trip col-4">
-        <h2><%= link_to "Ballade à Montmartre", trip_path(Trip.first)  %></h2>
-        <%= cl_image_tag Trip.first.photo %>
-        <p><%= Trip.first.description.first(150) %>[...]</p>
+        <h2><%= link_to "Ballade à Montmartre", trip_path(@last_trip1)  %></h2>
+        <%= cl_image_tag @last_trip1.photo %>
+        <p><%= @last_trip1.description.first(150) %>[...]</p>
       </div>
       <div class="card-trip col-4">
-        <h2><%= link_to "Découverte du canal", trip_path(Trip.last)  %></h2>
-        <%= cl_image_tag Trip.last.photo %>
-        <p><%= Trip.last.description.first(150) %>[...]</p>
+        <h2><%= link_to "Découverte du canal", trip_path(@last_trip2)  %></h2>
+        <%= cl_image_tag @last_trip2.photo %>
+        <p><%= @last_trip2.description.first(150) %>[...]</p>
       </div>
       <div class="card-trip col-4">
-        <h2><%= link_to "Découverte du 20ème", trip_path(Trip.last)  %></h2>
-        <%= cl_image_tag Trip.first.photo %>
-        <p><%= Trip.last.description.first(150) %>[...]</p>
+        <h2><%= link_to "Découverte du 20ème", trip_path(@last_trip3)  %></h2>
+        <%= cl_image_tag @last_trip3.photo %>
+        <p><%= @last_trip3.description.first(150) %>[...]</p>
       </div>
     </div>
   </div>
