@@ -1,10 +1,27 @@
 <div class="container container-trip">
 
-<h1>Liste des trips</h1>
 
-<% @trips.each do |trip| %>
-  <p>Name : <%= link_to trip.name, trip_path(trip) %></p>
-<% end %>
-
-<%= link_to "Create a new trip", new_trip_path %>
+<div class="banner-index-governesses" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container-banner">
+  </div>
+</div>
+<div class="d-flex">
+  <div class="container">
+    <div class="left-side d-flex justify-content-around">
+      <h1>Liste des trips</h1>
+      <% @trips.each do |trip| %>
+          <p>Name : <%= link_to trip.name, trip_path(trip) %></p>
+      <% end %>
+      <%= link_to "Create a new trip", new_trip_path %>
+    </div>
+    <div class="right-side">
+      <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_KEY'] %>">
+      </div>
+    </div>
+  </div>
 </div>
