@@ -6,7 +6,7 @@
       <%= cl_image_tag booking.trip.photo, alt: "Image trip" %>
       <div class="card-text-infos">
       <div>
-        <h2><%= link_to booking.trip.name, trip_path(booking) %></h2>
+        <h2><%= link_to booking.trip.name, trip_booking_path(booking.trip, booking) %></h2>
         <p>Commence le <%= booking.start_date.strftime("%A %d %B") %> et termine le <%= booking.end_date.strftime("%A %d %B") %></p>
         <p><%= booking.trip.city %></p>
       </div>
