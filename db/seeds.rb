@@ -40,7 +40,7 @@ canal = Trip.new(name: "Découverte du Canal", city: "Paris", user_id: "2", desc
 Le charme et le romantisme du Canal, avec ses marronniers centenaires, ses écluses, sa partie entièrement souterraine, ses ponts tournants, ses passerelles piétonnieres et ses berges animées en font un lieu de promenade très prisé des les premiers beaux jours.
 
 Une croisière à travers un Paris méconnu des parisiens eux-mêmes est une vraie découverte ou l’insolite se mêle à la détente et au 'bon temps'...")
-canal.remote_photo_url = "https://www.gettyimages.fr/detail/photo/locks-and-bridge-on-canal-st-martin-image-libre-de-droits/560511835"
+canal.remote_photo_url = "https://media.gettyimages.com/photos/locks-and-bridge-on-canal-st-martin-picture-id560511835?s=2048x2048"
 canal.save
 
 
