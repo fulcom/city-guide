@@ -6,8 +6,5 @@ import "flatpickr/dist/flatpickr.min.css" // Note this is important!
 
 
 // plugins: [new rangePlugin({ input: "#range_end"})]
-const initFlatpickr = () => {
-  flatpickr(".datepicker", {allowInput: true});
-}
 
-export { initFlatpickr };
+  flatpickr(".datepicker", {allowInput: true});
