@@ -1,6 +1,14 @@
  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
     <h1 class="m-3">Que voulez-vous faire ?</h1>
     <h2 id="h2-index" class="m-3">Découvrez votre ville</h2>
+    <%= form_tag trips_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a treep"
+      %>
+      <%= submit_tag "Search", class: "btn btn-flat-green" %>
+    <% end %>
   </div>
 
 <div class="container container-trip">
