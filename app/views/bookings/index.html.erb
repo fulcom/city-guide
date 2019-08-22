@@ -2,16 +2,22 @@
  <h1>Here are all your bookings</h1>
   <div class="">
     <% current_user.bookings.each do |booking| %>
-    <div class="card-text">
-      <%= cl_image_tag booking.trip.photo, alt: "Image trip" %>
-      <div class="card-text-infos">
-      <div>
-        <h2><%= link_to booking.trip.name, trip_booking_path(booking.trip, booking) %></h2>
-        <p>Commence le <%= booking.start_date.strftime("%A %d %B") %> et termine le <%= booking.end_date.strftime("%A %d %B") %></p>
-        <p><%= booking.trip.city %></p>
+      <div class="card-text">
+        <%= cl_image_tag booking.trip.photo, alt: "Image trip" %>
+        <div class="card-text-infos">
+          <div class="d-inline-flex">
+            <div>
+              <h2><%= link_to booking.trip.name, trip_booking_path(booking.trip, booking) %></h2>
+              <p>Commence le <%= booking.start_date.strftime("%A %d %B") %> et termine le <%= booking.end_date.strftime("%A %d %B") %></p>
+              <p><%= booking.trip.city %></p>
+            </div>
+            <div>
+              <%= link_to "Modifier", edit_trip_booking_path(booking.trip_id, booking), class: "btn btn-flat-violet"%></p>
+              <%= link_to "Annuler", trip_booking_path(booking.trip_id, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat-green"%></p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
     <% end %>
   </div>
 </div>

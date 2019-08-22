@@ -10,6 +10,14 @@
     <p>Commence le <%= @booking.start_date.strftime("%A %d %B") %> et termine le <%= @booking.end_date.strftime("%A %d %B") %></p>
     <p><%= @trip.name %> à <%= @trip.city %></p>
     <p>Description : <%= @trip.description %></p>
-    <p><%= link_to "Modifier votre réservation", edit_trip_booking_path(@booking), class: "btn btn-flat-violet w-50"%></p>
+    <div class="d-flex justify-content-around">
+      <div class="col-6">
+        <p><%= link_to "Modifier votre réservation", edit_trip_booking_path(@booking), class: "btn btn-flat-violet w-100"%></p>
+      </div>
+      <div class="col-6">
+        <p><%= link_to "Annuler votre réservation", trip_booking_path(@booking.trip_id, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat-green w-100"%></p>
+      </div>
+    </div>
   </div>
 </div>
+
