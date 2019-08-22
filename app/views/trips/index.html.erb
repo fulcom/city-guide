@@ -1,41 +1,51 @@
  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
     <h1 class="m-3">Que voulez-vous faire ?</h1>
     <h2 id="h2-index" class="m-3">Découvrez votre ville</h2>
-    <%= form_tag trips_path, method: :get do %>
+    <div class="d-flex">
+      <div class="col-5">
+      <%= form_tag trips_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find a treep"
       %>
+      </div>
+      <div class="col-3">
       <%= submit_tag "Search", class: "btn btn-flat-green" %>
-    <% end %>
+      </div>
+      <% end %>
+    </div>
   </div>
-
 <div class="container container-trip">
   <div class="d-flex pos-photo">
     <div class="container col-6">
-       <h2 class="m-3">List des treeps</h2>
-        <div>
-            <% @trips.each do |trip| %>
-           <div class="card-text m-10">
-            <%= cl_image_tag trip.photo %>
+      <h2 class="m-3">List des treeps</h2>
+      <% @trips.each do |trip| %>
+        <div class="card-text m-10">
+          <% if params[:query].present? %>
+            <%= cl_image_tag Trip.find(trip.searchable_id).photo %>
+              <div class="card-text-infos">
+                <h2><%= link_to Trip.find(trip.searchable_id).name, trip_path(trip) %></h2>
+                <p><%= trip.content.first(100) %>[...]</p>
+              </div>
+          <% else%>
+            <div class="card-text m-10">
+              <%= cl_image_tag trip.photo %>
               <div class="card-text-infos">
                 <h2><%= link_to trip.name, trip_path(trip) %></h2>
                 <p><%= trip.description.first(100) %>[...]</p>
               </div>
-              </div>
-              <%end%>
-          </div>
-
+            </div>
+          <%end%>
         </div>
-
+      <%end%>
+    </div>
 <!-- Alice -->
       <!-- <div class="container col-6 resize-img mt-5" style="background-image: url(<%#= image_path 'map.png' %>)"> -->
       <div
         id="map", style="width: 100%;, height: 600px;", data-markers="<%= @markers.to_json %>", data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
 <!-- Alice -->
-
     </div>
   </div>
    <div class="mt-10">

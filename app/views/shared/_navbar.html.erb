@@ -14,12 +14,11 @@
       <li class="nav-item">
         <%= link_to "Bookings", bookings_path, class: "nav-link" %>
       </li>
-
         <% if current_user != nil %>
           <li class="nav-item dropdown">
 
-            <% if current_user.picture != nil %>
-              <%= cl_image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% if current_user.photo != nil %>
+              <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, :width => 40 %>
             <% else %>
               <%= image_tag "https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
