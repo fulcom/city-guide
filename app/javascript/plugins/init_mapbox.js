@@ -14,15 +14,36 @@ const initMapbox = () =>
 
   const addMarkersToMap = (map, markers) =>
   {
-    markers.forEach((marker) =>
-    {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    // markers.forEach((marker) =>
+    // {
+    //   const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // add this
+    //   new mapboxgl.Marker()
+    //     .setLngLat([ marker.lng, marker.lat ])
+    //     .setPopup(popup) // add this
+    //     .addTo(map);
+    // });
+
+    markers.forEach((marker) => {
+
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+
+      // Create a HTML element for your custom marker
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.height = '40px';
+      element.style.width = '50px';
+
+
+      // Pass the element as an argument to the new marker
+      new mapboxgl.Marker(element)
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
         .addTo(map);
     });
+
   };
 
   if (mapElement)
