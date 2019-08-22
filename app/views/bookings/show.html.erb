@@ -1,9 +1,13 @@
+
 <div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo, crop: :fill %>')">
+  <!-- <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner card-trip-user"> -->
+    <% guide_id = @trip.user_id %>
+    <% guide = User.find(guide_id) %>
+    <%= image_tag guide.picture, class: "avatar-banner card-trip-user" %>
 </div>
 ​
-
-<img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner">
-​<div class="container">
+​
+<div class="container">
   <div class="banner-content text-center m-10">
 
     <h1 ><%= @user.first_name %>, voici le détail de la réservation</h1>
