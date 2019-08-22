@@ -3,38 +3,44 @@
       <img class="avatar-banner" src="https://avatars0.githubusercontent.com/u/51875307?v=4">
 </div>
 ​
-<div class="banner-content d-flex mr-3 ml-3">
+<!-- <div class="banner-content d-flex mr-3 ml-3">
+ -->  <div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="trip-presentation">
+  ​
+        <h1 class="text-left"><%= @trip.name %></h1>
+    ​
+        <p class="text-justify "><%= @trip.description %></p>
+    ​
 
-  <div class="col-8">
-​
-    <h1 class="text-center"><%= @trip.name %></h1>
-​
-    <p class="text-justify"><%= @trip.description %></p>
-​
-
-​    <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
-
-  </div>
-  <div class="col-4">
-    <div class="">
-      <h1>
-        <%# guide_id = @trip.user_id %>
-        <%# guide = User.find(guide_id) %>
-        <%#= guide.picture %>
-      </h1>
-    </div>
-    <h1> Réservez ce treep !</h1>
-    <%= simple_form_for [@trip, @booking] do |f| %>
-      <div class="form-inputs text-center">
-          <%= f.input :start_date, as: :string,
-                  required: false,
-                  autofocus: true, input_html: {class: "datepicker"} %>
-          <%= f.input :end_date, as: :string,
-                  required: false, input_html: {class: "datepicker"} %>
+    ​    <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
       </div>
-      <div class="form-actions">
-           <%= f.button :submit, "Treep !", class: "btn btn-flat-green w-100"  %>
+    </div>
+    <div class="col-4">
+      <div class="trip-reservation">
+      <!-- <div class="">
+        <h1>
+          <%# guide_id = @trip.user_id %>
+          <%# guide = User.find(guide_id) %>
+          <%#= guide.picture %>
+        </h1>
+      </div> -->
+      <h2 class="text-center"> Réservez ce treep !</h2>
+      <%= simple_form_for [@trip, @booking] do |f| %>
+        <div class="form-inputs text-center">
+            <%= f.input :start_date, as: :string,
+                    required: false,
+                    autofocus: true, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, as: :string,
+                    required: false, input_html: {class: "datepicker"} %>
         </div>
-      <% end %>
+        <div class="form-actions">
+             <%= f.button :submit, "Treep !", class: "btn btn-flat-green w-100"  %>
+          </div>
+          </div>
+        <% end %>
     </div>
   </div>
+</div>
+
