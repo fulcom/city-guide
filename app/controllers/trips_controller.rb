@@ -3,13 +3,14 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = Trip.all
+    # @trips = Trip.all
 
-    @trips_geocoded = Trip.geocoded #returns Trips with coordinates (based on city)
+    @trips = Trip.geocoded #returns Trips with coordinates (based on city)
     @markers = @trips.map do |trip|
      {
        lat: trip.latitude,
-       lng: trip.longitude
+       lng: trip.longitude,
+       infoWindow: render_to_string(partial: "info_window", locals: { trip: trip })
      }
     end
   end
