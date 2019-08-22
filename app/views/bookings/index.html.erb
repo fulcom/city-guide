@@ -22,5 +22,50 @@
       </div>
     <% end %>
   </div>
+
+  <h1>Here are the booking requests on my trips</h1>
+      <div>
+      <% @myaskings.each do |myasking| %>
+        <div class="card-text d-flex bd-highlight mb-3">
+          <div class="p-2 bd-highlight">
+            <%= cl_image_tag myasking.user.picture, alt: "Image trip" %>
+          </div>
+          <div class="card-text-infos p-2 bd-highlight">
+            <div>
+              <h2><%= myasking.user.first_name.nil? == true ? myasking.user.email : "#{myasking.user.first_name} : #{myasking.user.email}" %></h2>
+              <p>Souhaite réserver le trip <%= myasking.trip.name %></p>
+              <p>du <%= myasking.start_date.strftime("%A %d %B") %> au <%= myasking.end_date.strftime("%A %d %B") %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  <h1>Here are the trips that I propose</h1>
+    <div>
+      <% @mytrips.each do |mytrip| %>
+        <div class="card-text d-flex bd-highlight mb-3">
+          <div class="p-2 bd-highlight">
+            <%= cl_image_tag mytrip.photo, alt: "Image trip" %>
+          </div>
+          <div class="card-text-infos p-2 bd-highlight">
+            <div>
+              <h2><%= link_to mytrip.name, trip_path(mytrip) %></h2>
+              <p><%= mytrip.city %></p>
+              <p><%= mytrip.description %></p>
+            </div>
+          </div>
+
+          <div class="ml-auto p-2 bd-highlight">
+            <div class="d-flex flex-column mt-2">
+              <div class="mb-2"><%= link_to "Modifier", edit_trip_path(mytrip), class: "btn btn-flat-violet"%></div>
+              <div><%= link_to "Supprimer", trip_path(mytrip), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat-green"%></div>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+
 </div>
 

@@ -4,6 +4,9 @@ class BookingsController < ApplicationController
     # @trip = Trip.find(params[:trip_id])
     # @user = current_user
     # raise
+    @mytrips = Trip.where(user: current_user)
+    # @myaskings = Booking.where(trip_id: "1")
+    @myaskings = Booking.where(trip_id: current_user)
   end
 
   def show
