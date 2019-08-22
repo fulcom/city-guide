@@ -13,14 +13,6 @@
       </div>
       <div>
         <%= submit_tag "Search", class: "btn btn-flat-green"  %>
-
-      <ul>
-        <% @results.each do |result| %>
-          <li><%= link_to result.searchable.title, result.searchable %></li>
-        <% end %>
-      </ul>
-
-
       </div>
     </div>
     <% end %>
