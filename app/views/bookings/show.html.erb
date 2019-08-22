@@ -3,7 +3,7 @@
   <!-- <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner card-trip-user"> -->
     <% guide_id = @trip.user_id %>
     <% guide = User.find(guide_id) %>
-    <%= image_tag guide.picture, class: "avatar-banner card-trip-user" %>
+    <%= image_tag guide.photo, class: "avatar-banner card-trip-user" %>
 </div>
 <div class="container">
   <div class="banner-content text-center m-10">
