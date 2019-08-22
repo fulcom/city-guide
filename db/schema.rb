@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_08_22_161733) do
-
+ActiveRecord::Schema.define(version: 2019_08_22_165305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_161733) do
     t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "En attente"
+    t.string "status"
     t.index ["trip_id"], name: "index_bookings_on_trip_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -61,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_161733) do
     t.string "first_name"
     t.string "last_name"
     t.string "password"
-    t.string "picture"
+    t.string "photo"
     t.string "city"
     t.string "description"
     t.datetime "created_at", null: false
