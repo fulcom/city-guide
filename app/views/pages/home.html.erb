@@ -1,16 +1,28 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
-  <h1 class="d-flex banner-h1 mt-100 mb-100 justify-content-center">Une expérience green à Paris</h1>
-  <div class="d-flex justify-content-center" style="margin-top: 15px;">
-    <div class="mr-4 d-flex justify-content-center align-items-center" style="width: 450px">
+    <h1 class="banner-h1">Une expérience green à Paris</h1>
+    <div class="d-flex justify-content-center" style="margin-top: 15px;">
     </div>
-  </div>
-      <%= form_tag trips_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a treep"
-      %>
-      <%= submit_tag "Search", class: "btn btn-flat-green" %>
+    <div class="d-flex">
+      <div class="col-5">
+        <%= form_tag trips_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a treep"
+        %>
+      </div>
+      <div>
+        <%= submit_tag "Search", class: "btn btn-flat-green"  %>
+
+      <ul>
+        <% @results.each do |result| %>
+          <li><%= link_to result.searchable.title, result.searchable %></li>
+        <% end %>
+      </ul>
+
+
+      </div>
+    </div>
     <% end %>
 </div>
 <div class="container">
@@ -20,17 +32,17 @@
       <div class="card-trip col-4">
         <h2><%= link_to @last_trip1.name, trip_path(@last_trip1)  %></h2>
         <%= cl_image_tag @last_trip1.photo %>
-        <p><%= @last_trip1.description.first(151) %>[...]</p>
+        <p><%= @last_trip1.description.first(75) %>[...]</p>
       </div>
       <div class="card-trip col-4">
         <h2><%= link_to @last_trip2.name, trip_path(@last_trip2)  %></h2>
         <%= cl_image_tag @last_trip2.photo %>
-        <p><%= @last_trip2.description.first(151) %>[...]</p>
+        <p><%= @last_trip2.description.first(75) %>[...]</p>
       </div>
       <div class="card-trip col-4">
         <h2><%= link_to @last_trip3.name, trip_path(@last_trip3)  %></h2>
         <%= cl_image_tag @last_trip3.photo %>
-        <p><%= @last_trip3.description.first(151) %>[...]</p>
+        <p><%= @last_trip3.description.first(75) %>[...]</p>
       </div>
     </div>
   </div>
