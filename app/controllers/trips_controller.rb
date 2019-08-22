@@ -10,8 +10,10 @@ class TripsController < ApplicationController
      {
        lat: trip.latitude,
        lng: trip.longitude,
-       infoWindow: render_to_string(partial: "info_window", locals: { trip: trip })
+       infoWindow: render_to_string(partial: "info_window", locals: { trip: trip }),
+       image_url: helpers.asset_url('http://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Pic.png')
      }
+
     end
   end
 
