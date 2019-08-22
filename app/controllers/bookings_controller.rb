@@ -30,11 +30,12 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:booking_id])
+    @trip = Trip.find(params[:trip_id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:booking_id])
+    @booking = Booking.find(params[:id])
       if @booking.update(booking_params)
         redirect_to trip_booking_path(@booking)
       else render :edit
