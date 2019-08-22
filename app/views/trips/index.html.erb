@@ -13,7 +13,7 @@
             <%= cl_image_tag trip.photo %>
               <div class="card-text-infos">
                 <h2><%= link_to trip.name, trip_path(trip) %></h2>
-                <p><%= trip.description.first(200) %>[...]</p>
+                <p><%= trip.description.first(100) %>[...]</p>
               </div>
               </div>
               <%end%>
