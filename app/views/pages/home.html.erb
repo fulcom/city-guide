@@ -1,11 +1,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
   <h1 class="d-flex banner-h1 mt-100 mb-100 justify-content-center">Une expérience green à Paris</h1>
   <div class="d-flex justify-content-center" style="margin-top: 15px;">
-    <div class="border border-white mr-4 d-flex justify-content-center align-items-center" style="width: 450px">
-      <h2 class="banner-h2 " style="vertical-align: middle; " ">Searchbar to come</h2>
+    <div class="mr-4 d-flex justify-content-center align-items-center" style="width: 450px">
     </div>
-    <button class="btn-flat-green">Rechercher</button>
   </div>
+      <%= form_tag trips_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a treep"
+      %>
+      <%= submit_tag "Search", class: "btn btn-flat-green" %>
+    <% end %>
 </div>
 <div class="container">
   <h2 class="m-3">Les derniers Treeps</h2>
