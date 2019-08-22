@@ -1,26 +1,18 @@
 
 <div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo, crop: :fill %>')">
-  <!-- <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner card-trip-user"> -->
+  <!-- ISA <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner card-trip-user"> -->
     <% guide_id = @trip.user_id %>
     <% guide = User.find(guide_id) %>
     <%= image_tag guide.picture, class: "avatar-banner card-trip-user" %>
 </div>
-​
-​
 <div class="banner-content d-flex mr-3 ml-3">
+
   <div class="col-8">
-​
     <h1 class="text-center"><%= @trip.name %></h1>
-​
     <p class="text-justify"><%= @trip.description %></p>
-​
-
-​    <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
-
+    <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
   </div>
   <div class="col-4">
-
-
     <h1> Réservez ce treep !</h1>
     <%= simple_form_for [@trip, @booking] do |f| %>
       <div class="form-inputs text-center">

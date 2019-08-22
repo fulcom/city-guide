@@ -1,6 +1,7 @@
 body {
   background-color: #ffffff;
   font-family: 'Roboto', sans-serif;
+  position: relative;
 }
 
 h1 {
@@ -20,4 +21,9 @@ h2 {
 
 p {
   font-size: 16px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }
