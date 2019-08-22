@@ -1,9 +1,8 @@
 
 <div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo, crop: :fill %>')">
+      <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner card-trip-user">
 </div>
 ​
-<!-- <#%= cl_image_tag @trip.user.image, class: "avatar-large avatar-banner"%> -->
-<img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner">
 ​
 <div class="banner-content d-flex mr-3 ml-3">
   <div class="col-8">
@@ -17,6 +16,7 @@
 
   </div>
   <div class="col-4">
+
     <h1> Réservez ce treep !</h1>
     <%= simple_form_for [@trip, @booking] do |f| %>
       <div class="form-inputs text-center">
