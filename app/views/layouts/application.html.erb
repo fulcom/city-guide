@@ -12,8 +12,10 @@
     <%= favicon_link_tag asset_path('logo.png') %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= yield %>
+    <div class="footer-size">
+      <%= render 'shared/navbar' %>
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <p class="notice"><%= notice %></p>
