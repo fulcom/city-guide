@@ -4,6 +4,14 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
+
+    @trips_geocoded = Trip.geocoded #returns Trips with coordinates (based on city)
+    @markers = @trips.map do |trip|
+     {
+       lat: trip.latitude,
+       lng: trip.longitude
+     }
+    end
   end
 
   def show
