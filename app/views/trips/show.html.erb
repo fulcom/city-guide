@@ -3,7 +3,7 @@
   <!-- ISA <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner card-trip-user"> -->
     <% guide_id = @trip.user_id %>
     <% guide = User.find(guide_id) %>
-    <%= image_tag guide.picture, class: "avatar-banner card-trip-user" %>
+    <%= image_tag guide.photo, class: "avatar-banner card-trip-user" %>
 </div>
 <!-- <div class="banner-content d-flex mr-3 ml-3">
  -->  <div class="container">
@@ -18,13 +18,7 @@
     </div>
     <div class="col-4">
       <div class="trip-reservation">
-      <!-- <div class="">
-        <h1>
-          <%# guide_id = @trip.user_id %>
-          <%# guide = User.find(guide_id) %>
-          <%#= guide.picture %>
-        </h1>
-      </div> -->
+
       <h2 class="text-center"> Réservez ce treep !</h2>
       <%= simple_form_for [@trip, @booking] do |f| %>
         <div class="form-inputs text-center">
