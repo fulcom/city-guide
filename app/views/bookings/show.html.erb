@@ -1,14 +1,15 @@
+
 <div class="banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path @trip.photo, crop: :fill %>')">
-      <img class="avatar-banner" src="https://avatars0.githubusercontent.com/u/51875307?v=4">
+  <!-- <img src="https://res.cloudinary.com/spark-and-rise-ltd/image/upload/v1566307014/photo-1531210483974-4f8c1f33fd35_xcfetf.jpg" alt="" class="avatar-banner card-trip-user"> -->
+    <% guide_id = @trip.user_id %>
+    <% guide = User.find(guide_id) %>
+    <%= image_tag guide.picture, class: "avatar-banner card-trip-user" %>
 </div>
-​
-<div class="banner-content d-flex mr-3 ml-3">
+<div class="container">
+  <div class="banner-content text-center m-10">
 
-​<div class="container">
-  <div class="banner-content text-center m-12">
-
-    <h1 ><%= current_user.first_name %>, voici le détail de la réservation</h1>
-    <p>Commence le <%= @booking.start_date.strftime("%A %d %B") %> et termine le <%= @booking.end_date.strftime("%A %d %B") %></p>
+    <h1 ><%= @user.first_name %>, voici le détail de la réservation</h1>
+    <p class="light-green">Commence le <%= @booking.start_date.strftime("%A %d %B") %> et termine le <%= @booking.end_date.strftime("%A %d %B") %></p>
     <p><%= @trip.name %> à <%= @trip.city %></p>
     <p>Description : <%= @trip.description %></p>
     <div class="d-flex justify-content-around">
