@@ -1,3 +1,7 @@
+import "../components/dashboard";
+import { dashboard_animation } from '../components/dashboard';
+dashboard_animation();
+
 import "bootstrap";
 import "../plugins/flatpickr";
 
