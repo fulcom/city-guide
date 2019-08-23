@@ -31,21 +31,13 @@
       <h2 class="m-3">Liste des treeps</h2>
       <% @trips.each do |trip| %>
         <div class="card-text m-10">
-          <% if params[:query].present? %>
-            <%= cl_image_tag Trip.find(trip.searchable_id).photo %>
-              <div class="card-text-infos">
-                <h2><%= link_to Trip.find(trip.searchable_id).name, trip_path(trip) %></h2>
-                <p><%= trip.content.first(100) %>[...]</p>
-              </div>
-          <% else%>
-            <div class="card-text m-10">
-              <%= cl_image_tag trip.photo %>
-              <div class="card-text-infos">
-                <h2><%= link_to trip.name, trip_path(trip) %></h2>
-                <p><%= trip.description.first(100) %>[...]</p>
-              </div>
+          <div class="card-text m-10">
+            <%= cl_image_tag trip.photo %>
+            <div class="card-text-infos">
+              <h2><%= link_to trip.name, trip_path(trip) %></h2>
+              <p><%= trip.description.first(100) %>[...]</p>
             </div>
-          <%end%>
+          </div>
         </div>
       <%end%>
     </div>
