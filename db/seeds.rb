@@ -44,9 +44,9 @@ Une croisière à travers un Paris méconnu des parisiens eux-mêmes est une vra
 canal.remote_photo_url = "https://media.gettyimages.com/photos/locks-and-bridge-on-canal-st-martin-picture-id560511835?s=2048x2048"
 canal.save
 
-londres = Trip.new(name: "Londres", city: "Londres", address: "Londres", user_id: "1", description: "Londres, la capitale de l'Angleterre et du Royaume-Uni, est une ville moderne dont l'histoire remonte à l'époque romaine. En son centre se dressent l'imposant Parlement, l'emblématique Big Ben et l'abbaye de Westminster, lieu de couronnement des monarques britanniques. De l'autre côté de la Tamise, le London Eye, la grande roue, offre une vue panoramique sur le South Bank Center, et toute la ville.")
-londres.remote_photo_url = "https://img-4.linternaute.com/EJwrJtqS8UseZNofJUkmhg4FHd4=/660x366/smart/ba429abadd8a4731be516a2465ca749f/ccmcms-linternaute/10993851.jpg"
-londres.save
+# londres = Trip.new(name: "Londres", city: "Londres", address: "Londres", user_id: "1", description: "Londres, la capitale de l'Angleterre et du Royaume-Uni, est une ville moderne dont l'histoire remonte à l'époque romaine. En son centre se dressent l'imposant Parlement, l'emblématique Big Ben et l'abbaye de Westminster, lieu de couronnement des monarques britanniques. De l'autre côté de la Tamise, le London Eye, la grande roue, offre une vue panoramique sur le South Bank Center, et toute la ville.")
+# londres.remote_photo_url = "https://img-4.linternaute.com/EJwrJtqS8UseZNofJUkmhg4FHd4=/660x366/smart/ba429abadd8a4731be516a2465ca749f/ccmcms-linternaute/10993851.jpg"
+# londres.save
 
 # bookings
 booking1 = Booking.new(start_date: "20/08/2019", end_date: "20/08/2019", user_id: 2, trip_id: 1) # Charles fait le trip d'Alice
