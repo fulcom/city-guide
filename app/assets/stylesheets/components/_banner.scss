@@ -1,9 +1,25 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 50px;
   position: relative;
+  padding-top: 80px;
+  padding-left: 20px;
   height: 300px;
+}
+
+.banner.text-in-banner {
+  justify-content: start;
+}
+
+.banner-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.searchbar {
+  width: 450px;
+  margin-right: 10px;
 }
 
 .banner h1 {

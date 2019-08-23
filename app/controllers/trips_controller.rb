@@ -4,19 +4,18 @@ class TripsController < ApplicationController
 
   def index
     if params[:query].present?
-      @trips = PgSearch.multisearch(params[:query])
-    elsif
-      @trips = Trip.geocoded #returns Trips with coordinates (based on city)
-      @markers = @trips.map do |trip|
-        {
-          lat: trip.latitude,
-          lng: trip.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { trip: trip }),
-          image_url: helpers.asset_url('http://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Pic.png')
-        }
-      end
+      @pg_search_docs = PgSearch.multisearch(params[:query])
+      @trips = @pg_search_docs.map(&:searchable)
     else
-      @trips = Trip.all
+      @trips = Trip.geocoded #returns Trips with coordinates (based on city)
+    end
+    @markers = @trips.map do |trip|
+      {
+        lat: trip.latitude,
+        lng: trip.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { trip: trip }),
+        image_url: helpers.asset_url('http://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Pic.png')
+      }
     end
   end
 

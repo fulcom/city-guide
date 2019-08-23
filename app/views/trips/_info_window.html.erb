@@ -1,2 +1,4 @@
-<h2><%= trip.name %></h2>
-<p><%= trip.city %></p>
+<div>
+  <h2><%= link_to trip.name, trip_path(trip) %></h2>
+  <p><%= trip.city %></p>
+</div>

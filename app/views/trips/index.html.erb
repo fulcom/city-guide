@@ -1,24 +1,28 @@
- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
-    <div class="mt-30">
-      <%= link_to "Créer un treep", new_trip_path, class: "btn btn-flat-green btn-create mt-10" %>
-    </div>
-    <h1 class="m-3">Que voulez-vous faire ?</h1>
-    <h2 id="h2-index" class="m-3">Découvrez votre ville</h2>
-    <div class="d-flex">
-      <div class="col-5">
-      <%= form_tag trips_path, method: :get do %>
-      <%= text_field_tag :query,
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
+  <div class="text-in-banner">
+    <h1 class="mb-2">Que voulez-vous faire ?</h1>
+    <h2 id="h2-index" class="mb-2">Découvrez votre ville</h2>
+    <div class="banner-flex">
+      <div class="searchbar">
+        <%= form_tag trips_path, method: :get do %>
+        <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a treep"
-      %>
+        placeholder: "Trouver un Treep"
+        %>
       </div>
-      <div class="col-3">
-      <%= submit_tag "Search", class: "btn btn-flat-green" %>
+      <div class="pr-1 pl-0 justify-content-center">
+        <%= submit_tag "Chercher", class: "btn btn-flat-green" %>
+      </div>
+      <div class="pl-2">
+        <%= link_to "Créer un treep", new_trip_path, class: "btn btn-flat-violet" %>
       </div>
       <% end %>
+      <!-- <div class="">
+      </div> -->
     </div>
   </div>
+</div>
 
 <div class="container container-trip">
 <!--   <h2 class="m-3 text-center">List des treeps</h2>
@@ -27,21 +31,13 @@
       <h2 class="m-3">Liste des treeps</h2>
       <% @trips.each do |trip| %>
         <div class="card-text m-10">
-          <% if params[:query].present? %>
-            <%= cl_image_tag Trip.find(trip.searchable_id).photo %>
-              <div class="card-text-infos">
-                <h2><%= link_to Trip.find(trip.searchable_id).name, trip_path(trip) %></h2>
-                <p><%= trip.content.first(100) %>[...]</p>
-              </div>
-          <% else%>
-            <div class="card-text m-10">
-              <%= cl_image_tag trip.photo %>
-              <div class="card-text-infos">
-                <h2><%= link_to trip.name, trip_path(trip) %></h2>
-                <p><%= trip.description.first(100) %>[...]</p>
-              </div>
+          <div class="card-text m-10">
+            <%= cl_image_tag trip.photo %>
+            <div class="card-text-infos">
+              <h2><%= link_to trip.name, trip_path(trip) %></h2>
+              <p><%= trip.description.first(100) %>[...]</p>
             </div>
-          <%end%>
+          </div>
         </div>
       <%end%>
     </div>

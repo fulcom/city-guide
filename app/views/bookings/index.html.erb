@@ -8,9 +8,11 @@
     <a id="myrequests_btn" href="#" class="tab-underlined">My Requests</a>
   </li>
 </ul>
-
 <div id="mybookings">
- <h1>Here are all your bookings</h1>
+<!-- si j'ai pas de bookings -->
+<% if @mybookings.exists? %>
+<!-- je n'affiche pas l'encadré "Here are all your bookings" -->
+<h1>Here are all your bookings</h1>
   <div class="">
     <% current_user.bookings.each do |booking| %>
       <div class="card-text d-flex bd-highlight mb-3">
@@ -22,23 +24,41 @@
             <h2><%= link_to booking.trip.name, trip_booking_path(booking.trip, booking) %></h2>
             <p>Commence le <%= booking.start_date.strftime("%A %d %B") %> et termine le <%= booking.end_date.strftime("%A %d %B") %></p>
             <p><%= booking.trip.city %></p>
+            <p>Statut : <%= Booking::STATUSES[booking.status] %></p>
           </div>
         </div>
+
+        <!-- Si le statut de mon booking est pending -->
+        <% if booking.status == "pending" %>
         <div class="ml-auto p-2 bd-highlight">
           <div class="d-flex flex-column mt-2">
             <div class="mb-2"><%= link_to "Modifier", edit_trip_booking_path(booking.trip_id, booking), class: "btn btn-flat-violet"%></div>
             <div><%= link_to "Annuler", trip_booking_path(booking.trip_id, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat-green"%></div>
           </div>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
 
 
+
 <div id="myrequests" class="d-none">
   <h1>Here are the booking requests on my trips</h1>
+
+<!-- sinon (le statut de mon mon booking est accepted ou refused) -->
+<% else %>
+ <p>You did not book anything yet</p>
+<% end %>
+
+<!-- si j'ai des demandes de booking sur mes trips, j'affiche l'encadré "Here are the booking requests on my trips" -->
+<% if @myaskings.exists? %>
+  <h1>Here are the booking requests on your trips</h1>
+    <div>
+
       <% @myaskings.each do |myasking| %>
+
         <div class="card-text d-flex bd-highlight mb-3">
           <div class="p-2 bd-highlight">
             <%= cl_image_tag myasking.user.photo, alt: "Image trip" %>
@@ -48,11 +68,75 @@
               <h2><%= myasking.user.first_name.nil? == true ? myasking.user.email : "#{myasking.user.first_name} : #{myasking.user.email}" %></h2>
               <p>Souhaite réserver le trip <%= myasking.trip.name %></p>
               <p>du <%= myasking.start_date.strftime("%A %d %B") %> au <%= myasking.end_date.strftime("%A %d %B") %></p>
+              <p>Statut : <%= Booking::STATUSES[myasking.status] %></p>
             </div>
           </div>
+
+          <!-- Si le statut de mon booking est pending -->
+          <% if myasking.status == "pending" %>
+            <div class="ml-auto p-2 bd-highlight">
+              <div class="d-flex flex-column mt-2">
+                <div class="mb-2">
+                  <!-- simple_form pour "Accepter" - "declined" -->
+                  <%= simple_form_for myasking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: "accepted" } %>
+                    <%= f.submit "Accepter", class: "btn btn-flat-green" %>
+                  <% end %>
+                  <!-- simple_form pour "Refuser" - "declined" -->
+                  <%= simple_form_for myasking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: "declined" } %>
+                    <%= f.submit "Refuser", class: "btn btn-flat-violet" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <!-- sinon (le statut de mon mon booking est accepted ou refused) -->
+          <%# else %>
+          <% end %>
         </div>
       <% end %>
+
   </div>
 </div>
+</div>
+
+<!-- sinon je n'affiche pas l'encadré "Here are the booking requests on my trips" -->
+<% else %>
+<p>You don't have booking requests</p>
+
+<% end %>
+
+
+<!-- Si je propose des trips: j'affiche l'encadré "Here are the trips that I propose"-->
+<% if @mytrips.exists? %>
+  <h1>Here are the trips that I propose</h1>
+  <div>
+    <% @mytrips.each do |mytrip| %>
+      <div class="card-text d-flex bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+          <%= cl_image_tag mytrip.photo, alt: "Image trip" %>
+        </div>
+        <div class="card-text-infos p-2 bd-highlight">
+          <div>
+            <h2><%= link_to mytrip.name, trip_path(mytrip) %></h2>
+            <p><%= mytrip.city %></p>
+            <p><%= mytrip.description %></p>
+          </div>
+        </div>
+
+        <div class="ml-auto p-2 bd-highlight">
+          <div class="d-flex flex-column mt-2">
+            <div class="mb-2"><%= link_to "Modifier", edit_trip_path(mytrip), class: "btn btn-flat-violet"%></div>
+            <div><%= link_to "Supprimer", trip_path(mytrip), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat-green"%></div>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+<!-- sinon je n'affiche pas l'encadré "Here are the trips that I propose" -->
+<% else %>
+  <p>You do not propose any trip yet</p>
+<% end %>
 </div>
 
