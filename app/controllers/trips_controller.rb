@@ -5,7 +5,7 @@ class TripsController < ApplicationController
   def index
     if params[:query].present?
       @trips = PgSearch.multisearch(params[:query])
-    else
+    elsif
       @trips = Trip.geocoded #returns Trips with coordinates (based on city)
       @markers = @trips.map do |trip|
         {
@@ -15,6 +15,8 @@ class TripsController < ApplicationController
           image_url: helpers.asset_url('http://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Pic.png')
         }
       end
+    else
+      @trips = Trip.all
     end
   end
 

@@ -1,4 +1,15 @@
+
 <div class="container">
+<ul class="list-inline tabs-underlined" id ="boutons">
+  <li>
+    <a id="mybookings_btn" href="#" class="tab-underlined active"> My Bookings</a>
+  </li>
+  <li>
+    <a id="myrequests_btn" href="#" class="tab-underlined">My Requests</a>
+  </li>
+</ul>
+
+<div id="mybookings">
  <h1>Here are all your bookings</h1>
   <div class="">
     <% current_user.bookings.each do |booking| %>
@@ -22,9 +33,11 @@
       </div>
     <% end %>
   </div>
+</div>
 
+
+<div id="myrequests" class="d-none">
   <h1>Here are the booking requests on my trips</h1>
-      <div>
       <% @myaskings.each do |myasking| %>
         <div class="card-text d-flex bd-highlight mb-3">
           <div class="p-2 bd-highlight">
@@ -39,33 +52,7 @@
           </div>
         </div>
       <% end %>
-    </div>
-
-  <h1>Here are the trips that I propose</h1>
-    <div>
-      <% @mytrips.each do |mytrip| %>
-        <div class="card-text d-flex bd-highlight mb-3">
-          <div class="p-2 bd-highlight">
-            <%= cl_image_tag mytrip.photo, alt: "Image trip" %>
-          </div>
-          <div class="card-text-infos p-2 bd-highlight">
-            <div>
-              <h2><%= link_to mytrip.name, trip_path(mytrip) %></h2>
-              <p><%= mytrip.city %></p>
-              <p><%= mytrip.description %></p>
-            </div>
-          </div>
-
-          <div class="ml-auto p-2 bd-highlight">
-            <div class="d-flex flex-column mt-2">
-              <div class="mb-2"><%= link_to "Modifier", edit_trip_path(mytrip), class: "btn btn-flat-violet"%></div>
-              <div><%= link_to "Supprimer", trip_path(mytrip), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat-green"%></div>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
-    </div>
-
+  </div>
+</div>
 </div>
 
