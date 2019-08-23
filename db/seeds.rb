@@ -58,13 +58,13 @@ puts "canal created"
 
 # puts "legendes created"
 
-passages = Trip.new(name: "Les plus beaux passages", city: "Paris", address: "10-12 Boulevard Montmartre, 75009 Paris", user_id: "2", description: "Faites un saut dans le Paris du XIXe siècle ! A la découverte des élégantes boutiques et passages couverts qui jalonnent le parcours, flânez comme les parisien(ne)s de la Belle Epoque.
+passages = Trip.new(name: "Les plus beaux passages", city: "Paris", address: "10-12 Boulevard Montmartre, 75009 Paris", user_id: "12", description: "Faites un saut dans le Paris du XIXe siècle ! A la découverte des élégantes boutiques et passages couverts qui jalonnent le parcours, flânez comme les parisien(ne)s de la Belle Epoque.
 ")
 passages.remote_photo_url = "https://www.pariszigzag.fr/wp-content/uploads/2014/11/ImagesEclectic-8.jpg"
 passages.save
 
 puts "passages created"
-francs = Trip.new(name: "Paris des Francs-Maçons", city: "Paris", address: "Louvre Rue de Rivoli, 75001 Paris", user_id: "2", description: "Suivez-nous pour découvrir comment trois siècles de présence maçonnique à Paris ont marqué l’un des monuments les plus emblématiques de la capitale : le Louvre.
+francs = Trip.new(name: "Paris des Francs-Maçons", city: "Paris", address: "Louvre Rue de Rivoli, 75001 Paris", user_id: "12", description: "Suivez-nous pour découvrir comment trois siècles de présence maçonnique à Paris ont marqué l’un des monuments les plus emblématiques de la capitale : le Louvre.
 
 Histoire, symboles, célébrités… la franc-maçonnerie n’aura plus de secret pour vous après cette visite ! Fans de théories fantaisistes passez votre chemin car cette visite vous dévoilera la vraie histoire des vrais francs-maçons !
 ")
@@ -73,13 +73,13 @@ francs.save
 
 puts "francs created"
 
-annees_folles = Trip.new(name: "Paris des Années Folles", city: "Paris", address: "Boulevard du Montparnasse Paris", user_id: "2", description: "Prenez le train direction les Années folles ! Dans les ruelles qui eurent Breton, Man Ray, Kiki de Montparnasse ou encore Picasso pour habitués, nous vous proposons de saisir la folie de l’entre-deux-guerres.")
+annees_folles = Trip.new(name: "Paris des Années Folles", city: "Paris", address: "Boulevard du Montparnasse Paris", user_id: "12", description: "Prenez le train direction les Années folles ! Dans les ruelles qui eurent Breton, Man Ray, Kiki de Montparnasse ou encore Picasso pour habitués, nous vous proposons de saisir la folie de l’entre-deux-guerres.")
 annees_folles.remote_photo_url = "https://www.pariszigzag.fr/wp-content/uploads/2016/09/Le-Paris-des-anne%E2%95%A0ues-folles-3.jpg"
 annees_folles.save
 
 puts "années"
 
-pere_lachaise = Trip.new(name: "Père Lachaise insolite", city: "Paris", address: "8 Boulevard de Ménilmontant, 75020 Paris", user_id: "2", description: "Partez à la découverte des personnages qui font l’Histoire de ce gigantesque musée à ciel ouvert depuis plus de 200 ans ! Suivez-nous pour une balade hors du temps dans l’étrange labyrinthe que forment les 44 hectares de ce jardin-cimetière, où les tombes se bousculent et où la verdure foisonne, reprenant quelquefois ses droits sur les pierres.
+pere_lachaise = Trip.new(name: "Père Lachaise insolite", city: "Paris", address: "8 Boulevard de Ménilmontant, 75020 Paris", user_id: "12", description: "Partez à la découverte des personnages qui font l’Histoire de ce gigantesque musée à ciel ouvert depuis plus de 200 ans ! Suivez-nous pour une balade hors du temps dans l’étrange labyrinthe que forment les 44 hectares de ce jardin-cimetière, où les tombes se bousculent et où la verdure foisonne, reprenant quelquefois ses droits sur les pierres.
 ")
 pere_lachaise.remote_photo_url = "https://www.pariszigzag.fr/wp-content/uploads/2014/10/Lachaise.jpg"
 pere_lachaise.save
@@ -87,25 +87,25 @@ pere_lachaise.save
 puts "pere created"
 
 
-tuileries = Trip.new(name: "Les trésors insolites des Tuileries", city: "Paris", address: "Place de la Concorde, 75001 Paris", user_id: "2", description: "Des arbres, des allées, des bassins, des parisiens qui courent et des touristes qui pique-niquent… Commun, le jardin des Tuileries ? Eh bien non, au contraire !")
+tuileries = Trip.new(name: "Les trésors insolites des Tuileries", city: "Paris", address: "Place de la Concorde, 75001 Paris", user_id: "12", description: "Des arbres, des allées, des bassins, des parisiens qui courent et des touristes qui pique-niquent… Commun, le jardin des Tuileries ? Eh bien non, au contraire !")
 tuileries.remote_photo_url = "https://www.parisinfo.com/var/otcp/sites/images/media/1.-photos/02.-sites-culturels-630-x-405/jardin-des-tuileries-630x405-c-otcp-david-lefranc-i-137-02/7278-1-fre-FR/Jardin-des-Tuileries-630x405-C-OTCP-David-Lefranc-I-137-02.jpg"
 tuileries.save
 
 puts "tuileries created"
 
-ourcq = Trip.new(name: "Le canal de l'Ourcq", city: "Paris", address: "68 Quai de la Loire, 75019 Paris", user_id: "2", description: "C’est vraiment une balade super agréable, zen et tout en silence ! Tu peux aller te balader assez loin à l’extérieur de paris via le canal. Pas besoin de permis puisque c’est un bateau électrique ou de gondolier comme quand tu vas visiter Venise.")
+ourcq = Trip.new(name: "Le canal de l'Ourcq", city: "Paris", address: "68 Quai de la Loire, 75019 Paris", user_id: "12", description: "C’est vraiment une balade super agréable, zen et tout en silence ! Tu peux aller te balader assez loin à l’extérieur de paris via le canal. Pas besoin de permis puisque c’est un bateau électrique ou de gondolier comme quand tu vas visiter Venise.")
 ourcq.remote_photo_url = "https://www.marindeaudouce.fr/wp-content/uploads/bateau-naviguant-pres-des-moulins-de-pantin.jpg"
 ourcq.save
 
 puts "ourcq created"
 
-velo = Trip.new(name: "A vélo dans Paris", city: "Paris", address: "37 Quai Branly, 75007 Paris", user_id: "2", description: "Il te suffit de louer un Vélib à Paris pour ensuite pouvoir te balader tranquillement dans toute la capitale. Ensuite tu peux reposer ton vélo dans une des 1800 stations disponibles à Paris. L’avantage c’est que tu n’as pas avoir peur de te le faire voler ou d’être encombré avec, puisque tu le reposes en borne après chaque trajet.")
+velo = Trip.new(name: "A vélo dans Paris", city: "Paris", address: "37 Quai Branly, 75007 Paris", user_id: "12", description: "Il te suffit de louer un Vélib à Paris pour ensuite pouvoir te balader tranquillement dans toute la capitale. Ensuite tu peux reposer ton vélo dans une des 1800 stations disponibles à Paris. L’avantage c’est que tu n’as pas avoir peur de te le faire voler ou d’être encombré avec, puisque tu le reposes en borne après chaque trajet.")
 velo.remote_photo_url = "https://parisbiketour.net/wp-content/uploads/2016/12/paris-electrique-3.jpg"
 velo.save
 
 puts "velo created"
 
-campagne = Trip.new(name: "La campagne à Paris", city: "Paris", address: "210 Rue des Pyrénées, 75020 Paris", user_id: "2", description: "C’est un ensemble de petites ruelles avec des maisons typiques qui te donneront l’impression d’être dans un petit village ou dans un Paris des années 30. Le quartier se situe juste à côté de porte de Bagnolet dans les rues :
+campagne = Trip.new(name: "La campagne à Paris", city: "Paris", address: "210 Rue des Pyrénées, 75020 Paris", user_id: "12", description: "C’est un ensemble de petites ruelles avec des maisons typiques qui te donneront l’impression d’être dans un petit village ou dans un Paris des années 30. Le quartier se situe juste à côté de porte de Bagnolet dans les rues :
 
 rue Prosper Enfantin
 rue Irénée lanc
@@ -117,7 +117,7 @@ campagne.save
 puts "campagne created"
 
 
-coulee = Trip.new(name: "La coulée verte", city: "Paris", address: "1 Coulée verte René-Dumont, 75012 Paris", user_id: "2", description: "C’est une balade alternative de 4 km de long qui part de Bastille jusqu’à porte Dorée. C’est une alternance d’espaces verts, de petits jardins et plantations urbaines en tout genre.
+coulee = Trip.new(name: "La coulée verte", city: "Paris", address: "1 Coulée verte René-Dumont, 75012 Paris", user_id: "12", description: "C’est une balade alternative de 4 km de long qui part de Bastille jusqu’à porte Dorée. C’est une alternance d’espaces verts, de petits jardins et plantations urbaines en tout genre.
 
 C’est une vraie bouffée d’air frais, au calme et souvent en hauteur cachée dans un quartier qui ne le laisserait pas forcément présager . ")
 coulee.remote_photo_url = "https://ville-chatillon.fr/files/pages/modules/image/coulee-verte-4-49.jpg"
@@ -125,7 +125,7 @@ coulee.save
 
 puts "coulee created"
 
-quais = Trip.new(name: "Balade sur les quais de Seine", city: "Paris", address: "Place du Châtelet Paris", user_id: "2", description: "Pour un Parisien, la Seine n’est pas un simple cours d’eau. Aujourd’hui lieu privilégié de détente ou de promenades romantiques, ce fleuve reste, inconsciemment surement, celui qui a nourri en poissons les premiers parisiens, abreuvé son bétail et donné son eau pour y faire prospérer l’agriculture.
+quais = Trip.new(name: "Balade sur les quais de Seine", city: "Paris", address: "Place du Châtelet Paris", user_id: "12", description: "Pour un Parisien, la Seine n’est pas un simple cours d’eau. Aujourd’hui lieu privilégié de détente ou de promenades romantiques, ce fleuve reste, inconsciemment surement, celui qui a nourri en poissons les premiers parisiens, abreuvé son bétail et donné son eau pour y faire prospérer l’agriculture.
 
 Plus encore, la Seine fut à l’origine de la ville un rempart naturel contre les attaques extérieures lorsque Paris est devenu Paris, c’est-à-dire lorsque ses habitants se replièrent dans l’île de la Cité pour fuir les invasions, et abandonnèrent petit à petit d’eux-mêmes le nom Romain de Lutèce pour celui de Civitas Parisiorum : la ville des Parisii.")
 quais.remote_photo_url = "https://www.unjourdeplusaparis.com/wp-content/uploads/2012/08/balade-bord-de-seine.jpg"
