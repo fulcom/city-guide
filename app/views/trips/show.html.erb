@@ -9,7 +9,7 @@
  -->  <div class="container">
   <div class="row">
     <div class="col-8">
-      <div class="trip-presentation">
+      <div class="trip-presentation" style="padding-top: 52px">
         <h1 class="text-left"><%= @trip.name %></h1>
         <p class="text-justify "><%= @trip.description %></p>
           <%= link_to "Back to all trips", trips_path, class: "btn btn-flat-violet w-40" %>
@@ -17,7 +17,7 @@
 
     </div>
     <div class="col-4">
-      <div class="trip-reservation">
+      <div class="trip-reservation" style="padding-top: 52px">
 
       <h2 class="text-center"> Réservez ce treep !</h2>
       <%= simple_form_for [@trip, @booking] do |f| %>
