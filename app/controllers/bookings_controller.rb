@@ -7,6 +7,9 @@ class BookingsController < ApplicationController
     @mytrips = Trip.where(user: current_user)
     # @myaskings = Booking.where(trip_id: "1")
     @myaskings = Booking.where(trip_id: current_user)
+
+    @mybookings = Booking.where(user_id: current_user)
+    #raise
   end
 
   def show
