@@ -1,22 +1,25 @@
  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
-    <div class="mt-30">
-      <%= link_to "Créer un treep", new_trip_path, class: "btn btn-flat-green btn-create mt-10" %>
-    </div>
-    <h1 class="m-3">Que voulez-vous faire ?</h1>
-    <h2 id="h2-index" class="m-3">Découvrez votre ville</h2>
-    <div class="d-flex">
-      <div class="col-5">
-      <%= form_tag trips_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a treep"
-      %>
+      <h1 class="m-3">Que voulez-vous faire ?</h1>
+      <h2 id="h2-index" class="m-3">Découvrez votre ville</h2>
+      <div class="row align-items-center">
+        <div class="col-5">
+          <%= form_tag trips_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a treep"
+          %>
+        </div>
+        <div class="col-2">
+        <%= submit_tag "Search", class: "btn btn-flat-green" %>
+        </div>
+        <div class="col-2">
+        <%= link_to "Créer un treep", new_trip_path, class: "btn btn-flat-violet btn-create" %>
+        </div>
+        <% end %>
+        <div class="col-3">
+        </div>
       </div>
-      <div class="col-3">
-      <%= submit_tag "Search", class: "btn btn-flat-green" %>
-      </div>
-      <% end %>
     </div>
   </div>
 
