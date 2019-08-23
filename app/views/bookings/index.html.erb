@@ -26,6 +26,7 @@
   <h1>Here are the booking requests on my trips</h1>
       <div>
       <% @myaskings.each do |myasking| %>
+
         <div class="card-text d-flex bd-highlight mb-3">
           <div class="p-2 bd-highlight">
             <%= cl_image_tag myasking.user.photo, alt: "Image trip" %>
@@ -35,11 +36,30 @@
               <h2><%= myasking.user.first_name.nil? == true ? myasking.user.email : "#{myasking.user.first_name} : #{myasking.user.email}" %></h2>
               <p>Souhaite réserver le trip <%= myasking.trip.name %></p>
               <p>du <%= myasking.start_date.strftime("%A %d %B") %> au <%= myasking.end_date.strftime("%A %d %B") %></p>
+              <p>Statut : <%= Booking::STATUSES[myasking.status] %></p>
             </div>
           </div>
+
+          <div class="ml-auto p-2 bd-highlight">
+            <div class="d-flex flex-column mt-2">
+              <div class="mb-2">
+                <!-- simple_form pour "Accepter" - "declined" -->
+                <%= simple_form_for myasking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: "accepted" } %>
+                  <%= f.submit "Accepter", class: "btn btn-flat-green" %>
+                <% end %>
+                <!-- simple_form pour "Refuser" - "declined" -->
+                <%= simple_form_for myasking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: "declined" } %>
+                  <%= f.submit "Refuser", class: "btn btn-flat-violet" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
         </div>
       <% end %>
-    </div>
+      </div>
 
   <h1>Here are the trips that I propose</h1>
     <div>
